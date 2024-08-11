@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maths NCERT</title>
+    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+</head>
+
+<header>
+
+    <a href="index.html" class="logo">THE PACIFIC SUSTAINABLERS</a>
+
+    <ul>
+
+        <li>
+
+            <a href="index.html">Home</a>
+
+        </li>
+
+        <li>
+
+            <a href="index.html#about"">About</a>
+
+          </li>
+
+          <li>
+
+            <a href= " shop.html">Shop</a>
+        </li>
+
+        <li>
+
+            <a href="impact.html">Impact</a>
+
+        </li>
+
+        <li>
+
+            <a href="contact.html">Contact</a>
+
+        </li>
+
+        <li>
+
+            <a href="donate.html">Donate Now</a>
+
+        </li>
+        <li>
+
+            <a href="upcoming.html">Upcoming Projects</a>
+
+        </li>
+        <div class="nav-icons">
+            <i class="fa fa-user" onclick="toggleAccountMenu()"></i>
+            <div id="account-menu" class="account-menu">
+                <a href="login.html">Login</a>
+                <a href="account.html">My Account</a>
+            </div>
+        </div>
+        <script>
+
+            function toggleAccountMenu() {
+                const accountMenu = document.getElementById('account-menu');
+                if (accountMenu.style.display === 'block') {
+                    accountMenu.style.display = 'none';
+                } else {
+                    accountMenu.style.display = 'block';
+                }
+            }
+
+            // Optional: Close the account menu when clicking outside of it
+            document.addEventListener('click', function (event) {
+                const accountMenu = document.getElementById('account-menu');
+                const accountIcon = document.querySelector('.fa-user');
+                if (!accountIcon.contains(event.target) && !accountMenu.contains(event.target)) {
+                    accountMenu.style.display = 'none';
+                }
+                const cartMenu = document.getElementById('cart-menu');
+                const cartIcon = document.querySelector('.cart-icon');
+                if (!cartIcon.contains(event.target) && !cartMenu.contains(event.target)) {
+                    cartMenu.style.display = 'none';
+                }
+            });
+
+        </script>
+
+        <div class="cart-icon" onclick="toggleCartMenu()">
+            <i class="fa fa-shopping-cart"></i>
+        </div>
+
+        <!-- Cart menu -->
+        <div id="cart-menu" class="cart-menu">
+            <a href="cart.html">View Cart</a>
+
+        </div>
+        </div>
+        <script>
+
+            function toggleCartMenu() {
+                const cartMenu = document.getElementById('cart-menu');
+                cartMenu.style.display = cartMenu.style.display === 'block' ? 'none' : 'block';
+            }
+
+        </script>
+
+        <script type="text/javascript">
+
+            window.addEventListener("scroll", function () {
+
+                var header = document.querySelector("header");
+
+                header.classList.toggle("sticky", window.scrollY > 0);
+
+            });
+
+        </script>
+
+    </ul>
+
+    <button class="hamburger">
+
+        <div class="bar"></div>
+
+    </button>
+
+</header>
+
+<nav class="mobile-nav">
+
+    <a href="index.html">Home</a>
+
+    <a href="index.html#about">About</a>
+
+    <a href="shop.html">Shop</a>
+
+    <a href="impact.html">Impact</a>
+
+    <a href="contact.html">Contact</a>
+
+    <a href="donate.html">Donate Now</a>
+
+    <a href="upcoming.html">Upcoming Projects</a>
+
+    <a href="account.html">My Account</a>
+
+</nav>
+
+<body>
+    <div class="prod-container">
+        <div class="product-detail">
+            <div class="product-image">
+                <img src="img/math.jpg" alt="Product Image">
+            </div>
+            <div class="product-info">
+                <h1>Class 10th NCERT Full Set (Refurbished)</h1>
+                <p class="og-price">₹180</p>
+                <span class="discount">60% OFF</span>
+                <p class="price">₹72</p>
+                <a href="checkout.html" class="button">Buy Now</a>
+                <div class="product-description">
+                    <h2>Description</h2>
+                    <p>Transform your learning experience with our Class 10th NCERT Refurbished Book! Carefully restored
+                        to like-new condition, this textbook offers the same comprehensive content and rigorous
+                        standards as the original, at a more sustainable and affordable price. Each book undergoes a
+                        meticulous refurbishment process to ensure durability and functionality, supporting your
+                        academic journey while contributing to a greener planet. Perfect for students seeking quality
+                        education with an eco-conscious twist. Make a smart choice for your studies and the environment
+                        with our refurbished textbook.</p>
+
+                    <button id="add-to-cart" data-product-id="123" data-product-name="product-info"
+                        data-product-price="product-info">Add to Cart</button>
+                </div>
+
+                <div class="rating">
+                    <span class="rating-label">Average Rating:</span>
+                    <div class="stars">
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                    </div>
+                    <span id="average-rating">4.2</span> <!-- Example rating -->
+                </div>
+
+                <!-- User Review Section -->
+                <div class="review-form">
+                    <h3>Add Your Review</h3>
+                    <form id="reviewForm">
+                        <label for="review-text">Your Review:</label>
+                        <textarea id="review-text" name="reviewText" rows="4" required></textarea>
+
+                        <label for="review-rating">Rating:</label>
+                        <select id="review-rating" name="reviewRating" required>
+                            <option value="1">1 Star</option>
+                            <option value="2">2 Stars</option>
+                            <option value="3">3 Stars</option>
+                            <option value="4">4 Stars</option>
+                            <option value="5">5 Stars</option>
+                        </select>
+
+                        <button type="submit">Submit Review</button>
+
+                        <script>
+
+                            document.getElementById('reviewForm').addEventListener('submit', function (event) {
+                                event.preventDefault(); // Prevent default form submission
+
+                                const reviewText = document.getElementById('review-text').value;
+                                const reviewRating = document.getElementById('review-rating').value;
+
+                                // You can add an AJAX request here to submit the review to your server
+                                // Example:
+                                // fetch('/submit-review', {
+                                //     method: 'POST',
+                                //     headers: { 'Content-Type': 'application/json' },
+                                //     body: JSON.stringify({ reviewText, reviewRating })
+                                // }).then(response => response.json())
+                                //   .then(data => console.log(data))
+                                //   .catch(error => console.error(error));
+
+                                alert('Thank you for your review! It will be displayed after moderation.');
+
+                                // Optionally, you can reset the form fields after submission
+                                document.getElementById('reviewForm').reset();
+                            });
+
+                            document.getElementById('add-to-cart').addEventListener('click', function () {
+                                const productId = this.getAttribute('data-product-id');
+                                const productName = this.getAttribute('product-info');
+                                const productPrice = parseFloat(this.getAttribute('product-info'));
+
+                                // Call function to handle adding to cart
+                                addToCart(productId, productName, productPrice);
+
+                                alert('Product added to cart!');
+                            });
+
+                            function addToCart(productId, productName, productPrice) {
+                                // Retrieve existing cart from localStorage
+                                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+                                // Check if item is already in the cart
+                                const itemIndex = cart.findIndex(item => item.productId === productId);
+
+                                if (itemIndex > -1) {
+                                    // Update quantity if item is already in the cart
+                                    cart[itemIndex].quantity += 1;
+                                } else {
+                                    // Add new item to the cart
+                                    cart.push({
+                                        productId,
+                                        productName,
+                                        productPrice,
+                                        quantity: 1
+                                    });
+                                }
+
+                                // Save updated cart to localStorage
+                                localStorage.setItem('cart', JSON.stringify(cart));
+                            }
+
+                        </script>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</body>
+<footer>
+
+    <div class="footer-content">
+
+        <h3>Find Us on Social Media</h3>
+
+        <p>
+
+            So, let us guess? You wanted to explore our projects, dive into our initiatives, read our latest posts, or
+            just
+            say hi. Don’t worry, we’ve got you covered! Below are our social handles where you can do all this and more.
+
+            Feel free to connect, follow, or drop us a message. Let’s make some great conversations happen and work
+            together
+            towards a sustainable future!
+
+
+
+        </p>
+
+        <ul class="socials">
+
+            <li>
+
+                <a href="https://www.youtube.com/channel/UCE4ZXNvvX1RSWcP-1Wz3Uyg"><i class="fa fa-youtube"></i></a>
+
+            </li>
+
+            <li>
+
+                <a href="https://www.instagram.com/the.pacific.sustainablers/"><i class="fa fa-instagram"></i></a>
+
+            </li>
+
+            <li>
+
+                <a href="https://www.linkedin.com/company/thepacificsustainablers/posts/"><i
+                        class="fa fa-linkedin"></i></a>
+
+            </li>
+
+
+
+        </ul>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <p>
+
+            Copyright &copy; 2024 THE PACIFIC SUSTAINABLERES.
+
+            <span>THE PACIFIC SUSTAINABLERS</span>
+
+        </p>
+
+    </div>
+
+</footer>
+
+</html>

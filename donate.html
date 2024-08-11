@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Now</title>
+    <link rel="stylesheet" href="donate.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+</head>
+
+<header>
+
+    <a href="index.html" class="logo">
+        THE
+        PACIFIC
+        SUSTAINABLERS</a>
+
+    <ul>
+
+        <li>
+
+            <a href="index.html">Home</a>
+
+        </li>
+
+        <li>
+
+            <a href="index.html#about">About</a>
+
+        </li>
+
+        <li>
+
+            <a href="shop.html">Shop</a>
+        </li>
+
+        <li>
+
+            <a href="impact.html">Impact</a>
+
+        </li>
+
+        <li>
+
+            <a href="contact.html">Contact</a>
+
+        </li>
+
+        <li>
+
+            <a href="donate.html">Donate Now</a>
+
+        </li>
+        <li>
+
+            <a href="upcoming.html">Upcoming Projects</a>
+
+        </li>
+        <div class="nav-icons">
+            <i class="fa fa-user" onclick="toggleAccountMenu()"></i>
+            <div id="account-menu" class="account-menu">
+                <a href="login.html">Login</a>
+                <a href="account.html">My Account</a>
+            </div>
+        </div>
+        <script>
+
+            function toggleAccountMenu() {
+                const accountMenu = document.getElementById('account-menu');
+                if (accountMenu.style.display === 'block') {
+                    accountMenu.style.display = 'none';
+                } else {
+                    accountMenu.style.display = 'block';
+                }
+            }
+            document.addEventListener('click', function (event) {
+                const accountMenu = document.getElementById('account-menu');
+                const accountIcon = document.querySelector('.fa-user');
+                if (!accountIcon.contains(event.target) && !accountMenu.contains(event.target)) {
+                    accountMenu.style.display = 'none';
+                }
+
+                const cartMenu = document.getElementById('cart-menu');
+                const cartIcon = document.querySelector('.cart-icon');
+                if (!cartIcon.contains(event.target) && !cartMenu.contains(event.target)) {
+                    cartMenu.style.display = 'none';
+                }
+            });
+
+        </script>
+
+        <div class="cart-icon" onclick="toggleCartMenu()">
+            <i class="fa fa-shopping-cart"></i>
+        </div>
+
+        <!-- Cart menu -->
+        <div id="cart-menu" class="cart-menu">
+            <a href="cart.html">View Cart</a>
+
+        </div>
+        </div>
+        <script>
+
+            function toggleCartMenu() {
+                const cartMenu = document.getElementById('cart-menu');
+                cartMenu.style.display = cartMenu.style.display === 'block' ? 'none' : 'block';
+            }
+
+        </script>
+
+    </ul>
+
+    <script type="text/javascript">
+
+        window.addEventListener("scroll", function () {
+
+            var header = document.querySelector("header");
+
+            header.classList.toggle("sticky", window.scrollY > 0);
+
+        });
+
+    </script>
+
+    <button class="hamburger">
+
+        <div class="bar"></div>
+
+    </button>
+
+</header>
+
+<nav class="mobile-nav">
+
+    <a href="index.html">Home</a>
+
+    <a href="index.html#about">About</a>
+
+    <a href="shop.html">Shop</a>
+
+    <a href="impact.html">Impact</a>
+
+    <a href="contact.html">Contact</a>
+
+    <a href="donate.html">Donate Now</a>
+
+    <a href="upcoming.html">Upcoming Projects</a>
+
+    <a href="account.html">My Account</a>
+
+</nav>
+
+<main>
+    <section class="donate-form">
+        <h2>Make a Difference Today!</h2>
+        <p>Your donations help us create a more sustainable future. Please fill out the form below to contribute
+            books or reusable items.</p>
+        <form id="donationForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone" required><br><br>
+            <label for="donation-type">Donation Type:</label>
+            <select id="donation-type" name="donation-type">
+                <option value="Book">Book</option>
+                <option value="Clothes">Clothes</option>
+            </select><br><br>
+            <label for="item-details">Details of Item:</label>
+            <input type="text" id="item-details" name="item-details" required><br><br>
+            <label for="pickup-address">Pickup Address:</label>
+            <input type="text" id="pickup-address" name="pickup-address" required><br><br>
+            <button type="submit">Donate Now</button>
+        </form>
+
+        <div id="thankYouModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p id="thankYouMessage"></p>
+                <div class="progress-bar">
+                    <div class="progress" id="ecoScoreProgress"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.getElementById('donationForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent form from submitting the default way
+
+            const name = document.getElementById('name').value;
+            const pointsEarned = 10; // Assume each donation earns 10 points
+            let currentPoints = 10; // Fetch the user's current points from the server or keep it as a variable
+            let totalPoints = currentPoints + pointsEarned;
+
+            // Update the modal content
+            document.getElementById('thankYouMessage').innerHTML =
+                `Thank you for your donation, ${name}! You have gained ${pointsEarned} Eco Score points.<br>` +
+                `You now have ${totalPoints} points. You need ${50 - totalPoints} more points to receive The Pacific Sustainabler Certificate.`;
+
+            // Update the progress bar
+            const progressPercentage = (totalPoints / 50) * 100;
+            document.getElementById('ecoScoreProgress').style.width = progressPercentage + '%';
+
+            // Display the modal
+            const modal = document.getElementById("thankYouModal");
+            modal.style.display = "block";
+
+            // Close the modal when the user clicks on <span> (x)
+            document.getElementsByClassName("close")[0].onclick = function () {
+                modal.style.display = "none";
+            }
+
+            // You can add an AJAX request here to submit the data to your server
+        });
+    </script>
+</main>
+<footer>
+
+    <div class="footer-content">
+
+        <h3>Find Us on Social Media</h3>
+
+        <p>
+
+            So, let us guess? You wanted to explore our projects, dive into our initiatives, read our latest posts, or
+            just
+            say hi. Don’t worry, we’ve got you covered! Below are our social handles where you can do all this and more.
+
+            Feel free to connect, follow, or drop us a message. Let’s make some great conversations happen and work
+            together
+            towards a sustainable future!
+
+
+
+        </p>
+
+        <ul class="socials">
+
+            <li>
+
+                <a href="https://www.youtube.com/channel/UCE4ZXNvvX1RSWcP-1Wz3Uyg"><i class="fa fa-youtube"></i></a>
+
+            </li>
+
+            <li>
+
+                <a href="https://www.instagram.com/the.pacific.sustainablers/"><i class="fa fa-instagram"></i></a>
+
+            </li>
+
+            <li>
+
+                <a href="https://www.linkedin.com/company/thepacificsustainablers/posts/"><i
+                        class="fa fa-linkedin"></i></a>
+
+            </li>
+
+
+
+        </ul>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <p>
+
+            Copyright &copy; 2024 THE PACIFIC SUSTAINABLERES.
+
+            <span>THE PACIFIC SUSTAINABLERS</span>
+
+        </p>
+
+    </div>
+
+</footer>
+
+
+</html>

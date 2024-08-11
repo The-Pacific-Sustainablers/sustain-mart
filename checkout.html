@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="checkout.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+
+</head>
+<header>
+
+    <a href="index.html" class="logo">THE PACIFIC SUSTAINABLERS</a>
+
+    <ul>
+
+        <li>
+
+            <a href="index.html">Home</a>
+
+        </li>
+
+        <li>
+
+            <a href="index.html#about"">About</a>
+
+          </li>
+
+          <li>
+
+            <a href=" shop.html">Shop</a>
+        </li>
+
+        <li>
+
+            <a href="impact.html">Impact</a>
+
+        </li>
+
+        <li>
+
+            <a href="contact.html">Contact</a>
+
+        </li>
+
+        <li>
+
+            <a href="donate.html">Donate Now</a>
+
+        </li>
+        <li>
+
+            <a href="upcoming.html">Upcoming Projects</a>
+
+        </li>
+        <div class="nav-icons">
+            <i class="fa fa-user" onclick="toggleAccountMenu()"></i>
+            <div id="account-menu" class="account-menu">
+                <a href="login.html">Login</a>
+                <a href="account.html">My Account</a>
+            </div>
+        </div>
+        <script>
+
+            function toggleAccountMenu() {
+                const accountMenu = document.getElementById('account-menu');
+                if (accountMenu.style.display === 'block') {
+                    accountMenu.style.display = 'none';
+                } else {
+                    accountMenu.style.display = 'block';
+                }
+            }
+
+            // Optional: Close the account menu when clicking outside of it
+            document.addEventListener('click', function (event) {
+                const accountMenu = document.getElementById('account-menu');
+                const accountIcon = document.querySelector('.fa-user');
+                if (!accountIcon.contains(event.target) && !accountMenu.contains(event.target)) {
+                    accountMenu.style.display = 'none';
+                }
+                const cartMenu = document.getElementById('cart-menu');
+                const cartIcon = document.querySelector('.cart-icon');
+                if (!cartIcon.contains(event.target) && !cartMenu.contains(event.target)) {
+                    cartMenu.style.display = 'none';
+                }
+            });
+
+        </script>
+
+        <div class="cart-icon" onclick="toggleCartMenu()">
+            <i class="fa fa-shopping-cart"></i>
+        </div>
+
+        <!-- Cart menu -->
+        <div id="cart-menu" class="cart-menu">
+            <a href="cart.html">View Cart</a>
+
+        </div>
+        </div>
+        <script>
+
+            function toggleCartMenu() {
+                const cartMenu = document.getElementById('cart-menu');
+                cartMenu.style.display = cartMenu.style.display === 'block' ? 'none' : 'block';
+            }
+
+        </script>
+
+    </ul>
+
+
+    <script type="text/javascript">
+
+        window.addEventListener("scroll", function () {
+
+            var header = document.querySelector("header");
+
+            header.classList.toggle("sticky", window.scrollY > 0);
+
+        });
+
+    </script>
+
+
+    <button class="hamburger">
+
+        <div class="bar"></div>
+
+    </button>
+
+</header>
+
+<nav class="mobile-nav">
+
+    <a href="index.html">Home</a>
+
+    <a href="index.html#about">About</a>
+
+    <a href="shop.html">Shop</a>
+
+    <a href="impact.html">Impact</a>
+
+    <a href="contact.html">Contact</a>
+
+    <a href="donate.html">Donate Now</a>
+
+    <a href="upcoming.html">Upcoming Projects</a>
+
+    <a href="account.html">My Account</a>
+
+</nav>
+
+<body>
+    <div class="checkout-container">
+        <div class="checkout-header">
+            <h1>Checkout</h1>
+        </div>
+
+        <form id="checkout-form" class="checkout-form">
+            <div class="form-group">
+                <label for="full-name">Full Name</label>
+                <input type="text" id="full-name" name="full_name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Shipping Address</label>
+                <textarea id="address" name="address" rows="4" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="payment-method">Payment Method</label>
+                <select id="payment-method" name="payment_method" required>
+                    <option value="credit_card">Credit Card</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="bank_transfer">Bank Transfer</option>
+                </select>
+            </div>
+
+            <div class="form-group form-check">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree to the <a href="#">terms and conditions</a></label>
+            </div>
+
+            <button type="submit" class="button">Place Order</button>
+        </form>
+
+        <div id="thank-you-message" style="display:none;">
+            <h2>Thank You!</h2>
+            <p>Your order has been placed successfully.</p>
+        </div>
+
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <table>
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+                <tr>
+                    <td>Product Name</td>
+                    <td>1</td>
+                    <td>$99.99</td>
+                </tr>
+                <!-- Repeat rows as needed -->
+                <tr>
+                    <td colspan="2" class="total">Total:</td>
+                    <td>$99.99</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('checkout-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevents the default form submission
+
+            // Validate form data
+            const fullName = document.getElementById('full-name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const address = document.getElementById('address').value;
+            const paymentMethod = document.getElementById('payment-method').value;
+            const termsChecked = document.getElementById('terms').checked;
+
+            if (!termsChecked) {
+                alert('You must agree to the terms and conditions.');
+                return;
+            }
+
+            // Simulate form submission
+            console.log({
+                fullName,
+                email,
+                phone,
+                address,
+                paymentMethod
+            });
+
+            // Display thank you message
+            document.getElementById('checkout-form').style.display = 'none';
+            document.getElementById('thank-you-message').style.display = 'block';
+        });
+    </script>
+</body>
+<footer>
+
+    <div class="footer-content">
+
+        <h3>Find Us on Social Media</h3>
+
+        <p>
+
+            So, let us guess? You wanted to explore our projects, dive into our initiatives, read our latest posts, or
+            just
+            say hi. Don’t worry, we’ve got you covered! Below are our social handles where you can do all this and more.
+
+            Feel free to connect, follow, or drop us a message. Let’s make some great conversations happen and work
+            together
+            towards a sustainable future!
+
+
+
+        </p>
+
+        <ul class="socials">
+
+            <li>
+
+                <a href="https://www.youtube.com/channel/UCE4ZXNvvX1RSWcP-1Wz3Uyg"><i class="fa fa-youtube"></i></a>
+
+            </li>
+
+            <li>
+
+                <a href="https://www.instagram.com/the.pacific.sustainablers/"><i class="fa fa-instagram"></i></a>
+
+            </li>
+
+            <li>
+
+                <a href="https://www.linkedin.com/company/thepacificsustainablers/posts/"><i
+                        class="fa fa-linkedin"></i></a>
+
+            </li>
+
+
+
+        </ul>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <p>
+
+            Copyright &copy; 2024 THE PACIFIC SUSTAINABLERES.
+
+            <span>THE PACIFIC SUSTAINABLERS</span>
+
+        </p>
+
+    </div>
+
+</footer>
+
+</html>

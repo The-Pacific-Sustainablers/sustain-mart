@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="register.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+<header>
+
+    <a href="index.html" class="logo"> THE
+        PACIFIC
+        SUSTAINABLERS</a>
+
+
+    <ul>
+
+        <li>
+
+            <a href="index.html">Home</a>
+
+        </li>
+
+        <li>
+
+            <a href="index.html#about">About</a>
+
+        </li>
+
+        <li>
+
+            <a href="shop.html">Shop</a>
+        </li>
+
+        <li>
+
+            <a href="impact.html">Impact</a>
+
+        </li>
+
+        <li>
+
+            <a href="contact.html">Contact</a>
+
+        </li>
+        <li>
+
+            <a href="donate.html">Donate Now</a>
+
+        </li>
+        <li>
+
+            <a href="upcoming.html">Upcoming Projects</a>
+
+        </li>
+        <div class="nav-icons">
+            <i class="fa fa-user" onclick="toggleAccountMenu()"></i>
+            <div id="account-menu" class="account-menu">
+                <a href="login.html">Login</a>
+                <a href="account.html">My Account</a>
+            </div>
+        </div>
+        <script>
+
+            function toggleAccountMenu() {
+                const accountMenu = document.getElementById('account-menu');
+                if (accountMenu.style.display === 'block') {
+                    accountMenu.style.display = 'none';
+                } else {
+                    accountMenu.style.display = 'block';
+                }
+            }
+
+            // Optional: Close the account menu when clicking outside of it
+            document.addEventListener('click', function (event) {
+                const accountMenu = document.getElementById('account-menu');
+                const accountIcon = document.querySelector('.fa-user');
+                if (!accountIcon.contains(event.target) && !accountMenu.contains(event.target)) {
+                    accountMenu.style.display = 'none';
+                }
+                const cartMenu = document.getElementById('cart-menu');
+                const cartIcon = document.querySelector('.cart-icon');
+                if (!cartIcon.contains(event.target) && !cartMenu.contains(event.target)) {
+                    cartMenu.style.display = 'none';
+                }
+            });
+
+        </script>
+
+        <div class="cart-icon" onclick="toggleCartMenu()">
+            <i class="fa fa-shopping-cart"></i>
+        </div>
+
+        <!-- Cart menu -->
+        <div id="cart-menu" class="cart-menu">
+            <a href="cart.html">View Cart</a>
+
+        </div>
+        </div>
+        <script>
+
+            function toggleCartMenu() {
+                const cartMenu = document.getElementById('cart-menu');
+                cartMenu.style.display = cartMenu.style.display === 'block' ? 'none' : 'block';
+            }
+
+        </script>
+
+    </ul>
+
+    <script type="text/javascript">
+
+        window.addEventListener("scroll", function () {
+
+            var header = document.querySelector("header");
+
+            header.classList.toggle("sticky", window.scrollY > 0);
+
+        });
+
+    </script>
+
+    <button class="hamburger">
+
+        <div class="bar"></div>
+
+    </button>
+
+</header>
+
+<nav class="mobile-nav">
+
+    <a href="index.html">Home</a>
+
+    <a href="index.html#about">About</a>
+
+    <a href="shop.html">Shop</a>
+
+    <a href="impact.html">Impact</a>
+
+    <a href="contact.html">Contact</a>
+
+    <a href="donate.html">Donate Now</a>
+
+    <a href="upcoming.html">Upcoming Projects</a>
+
+    <a href="account.html">My Account</a>
+
+</nav>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Now</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .register-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+            margin-top: 500px;
+        }
+
+        .register-form h1 {
+            margin-bottom: 30px;
+            color: #248a47;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .form-group input:focus {
+            border-color: #248a47;
+            outline: none;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #248a47;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-group button:hover {
+            background-color: #1f743e;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="register-container">
+        <div class="register-form">
+            <h1>Register Now</h1>
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                </div>
+                <div class="error" id="error"></div>
+                <div class="form-group">
+                    <button type="submit">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("registrationForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // Clear previous error message
+            document.getElementById("error").innerText = "";
+
+            // Get form values
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+
+            // Validate form
+            if (password !== confirmPassword) {
+                document.getElementById("error").innerText = "Passwords do not match.";
+                return;
+            }
+
+            // Prepare form data to send to the server
+            const formData = {
+                name: name,
+                email: email,
+                password: password
+            };
+
+            // Send form data to server using Fetch API
+            fetch('register.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert("Registration successful!");
+                        // Redirect to login page or another page
+                        window.location.href = "login.html";
+                    } else {
+                        document.getElementById("error").innerText = data.message;
+                    }
+                })
+                .catch(error => {
+                    document.getElementById("error").innerText = "An error occurred. Please try again.";
+                });
+        });
+    </script>
+</body>
+<footer>
+
+    <div class="footer-content">
+
+        <h3>Find Us on Social Media</h3>
+
+        <p>
+
+            So, let us guess? You wanted to explore our projects, dive into our initiatives, read our latest posts, or
+            just
+            say hi. Don’t worry, we’ve got you covered! Below are our social handles where you can do all this and more.
+
+            Feel free to connect, follow, or drop us a message. Let’s make some great conversations happen and work
+            together
+            towards a sustainable future!
+
+
+
+        </p>
+
+        <ul class="socials">
+
+            <li>
+
+                <a href="https://www.youtube.com/channel/UCE4ZXNvvX1RSWcP-1Wz3Uyg"><i class="fa fa-youtube"></i></a>
+
+            </li>
+
+            <li>
+
+                <a href="https://www.instagram.com/the.pacific.sustainablers/"><i class="fa fa-instagram"></i></a>
+
+            </li>
+
+            <li>
+
+                <a href="https://www.linkedin.com/company/thepacificsustainablers/posts/"><i
+                        class="fa fa-linkedin"></i></a>
+
+            </li>
+
+
+
+        </ul>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <p>
+
+            Copyright &copy; 2024 THE PACIFIC SUSTAINABLERES.
+
+            <span>THE PACIFIC SUSTAINABLERS</span>
+
+        </p>
+
+    </div>
+
+</footer>
+
+</html>

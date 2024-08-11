@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-image: url(img/prod.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  overflow-y: scroll;
+}
+
+/* 
+.container {
+  top: 300px;
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+} */
+
+.account-container {
+  top: 300px;
+  display: flex;
+  max-width: 1200px;
+  margin: 50px auto;
+  margin-top: 200px;
+  padding: 20px;
+  background: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.account-sidebar {
+  top: 300px;
+  width: 25%;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.account-sidebar h2 {
+  margin-bottom: 20px;
+}
+
+.account-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.account-sidebar ul li {
+  margin-bottom: 10px;
+}
+
+.account-sidebar ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+}
+
+.account-content {
+  width: 75%;
+  padding: 20px;
+  margin-left: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.account-content h2 {
+  margin-bottom: 20px;
+}
+
+.account-content p {
+  margin: 10px 0;
+}
+
+#account-settings-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#account-settings-form label {
+  margin-top: 10px;
+}
+
+#account-settings-form input {
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+#account-settings-form button {
+  margin-top: 20px;
+  padding: 10px;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#account-settings-form button:hover {
+  background: #555;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th,
+table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+table th {
+  background: #f4f4f4;
+}
+
+table tr:hover {
+  background: #f4f4f4;
+}
+
+#progressContainer {
+  width: 100%;
+  background-color: #e0e0e0;
+  border-radius: 25px;
+  height: 30px;
+  margin-top: 10px;
+}
+
+#progressBar {
+  height: 100%;
+  border-radius: 25px;
+  background-color: #76c7c0;
+  width: 0;
+  transition: width 1s;
+}
+
+@media (max-width: 768px) {
+  .account-container {
+    flex-direction: column;
+  }
+
+  .account-sidebar {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .account-content {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+#receiveCertificateBtn {
+  top: 20px;
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #28a745;
+  /* Green background color */
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#receiveCertificateBtn:hover {
+  background-color: #218838;
+  /* Darker green for hover effect */
+}
+
+#receiveCertificateBtn:active {
+  transform: scale(0.98);
+  /* Slight scale-down effect on click */
+}
+
+#receiveCertificateBtn:disabled {
+  background-color: #6c757d;
+  /* Gray background when disabled */
+  cursor: not-allowed;
+}

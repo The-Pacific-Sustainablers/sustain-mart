@@ -1,0 +1,151 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+
+  background-image: url(img/prod.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  overflow-y: scroll;
+}
+
+.cart-container {
+  max-width: 1200px;
+  margin-top: 250px;
+  margin-left: 180px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.cart-header h1 {
+  text-align: center;
+  color: #2e7d32;
+  margin-bottom: 20px;
+}
+
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.cart-table th,
+.cart-table td {
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-table th {
+  background-color: #2e7d32;
+  color: #fff;
+}
+
+.cart-table img {
+  max-width: 100px;
+  border-radius: 4px;
+}
+
+.quantity-input {
+  width: 60px;
+  padding: 5px;
+  text-align: center;
+}
+
+.remove-button {
+  background-color: #d32f2f;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.remove-button:hover {
+  background-color: #c62828;
+}
+
+.cart-summary {
+  margin-top: 20px;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.summary-item h3 {
+  margin: 0;
+  color: #2e7d32;
+}
+
+.checkout-button {
+  background-color: #2e7d32;
+  color: #fff;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}
+
+.checkout-button:hover {
+  background-color: #1b5e20;
+}
+
+.nav-icons {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.fa-user,
+.cart-icon i {
+  font-size: 20px;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.account-menu,
+.cart-menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.account-menu {
+  top: 40px;
+}
+
+.cart-menu {
+  top: 50px;
+  width: 200px;
+}
+
+.account-menu a,
+.cart-menu a {
+  display: block;
+  padding: 10px 20px;
+  color: #333;
+  text-decoration: none;
+}
+
+.account-menu a:hover,
+.cart-menu a:hover {
+  background-color: #f0f0f0;
+}
+
+max-0

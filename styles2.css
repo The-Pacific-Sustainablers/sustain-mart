@@ -1,0 +1,300 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+header, nav, .login-container {
+    flex: 1;
+}
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.login-box {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 500px;
+    position: relative;
+    margin-top: 500px;
+}
+
+.login-box h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.user-box {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #333;
+    outline: none;
+    background: transparent;
+}
+
+.user-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #333;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.user-box input:focus~label,
+.user-box input:valid~label {
+    top: -20px;
+    left: 0;
+    color: #28a745;
+    font-size: 12px;
+}
+
+.login-box button {
+    background: #28a745;
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.login-box button:hover {
+    background: #218838;
+}
+
+.login-box p {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #333;
+}
+
+.login-box p a {
+    color: #28a745;
+    text-decoration: none;
+}
+
+.login-box p a:hover {
+    text-decoration: underline;
+}
+
+.nav-icons {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.fa-user {
+    font-size: 20px;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.account-menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.account-menu a {
+    display: block;
+    padding: 10px 20px;
+    color: #333;
+    text-decoration: none;
+}
+
+.account-menu a:hover {
+    background-color: #f0f0f0;
+}
+
+.cart-icon {
+    font-size: 20px;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.cart-icon i {
+    font-size: 20px;
+    color: #fff;
+}
+
+.cart-menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    width: 200px;
+}
+
+.cart-menu a {
+    display: block;
+    padding: 10px 20px;
+    color: #333;
+    text-decoration: none;
+}
+
+.cart-menu a:hover {
+    background-color: #f0f0f0;
+}
+/* Base footer styles */
+footer {
+
+    position: relative;
+  
+    top: 100px;
+  
+    background: #111;
+  
+    height: auto;
+  
+    width: 100vw;
+  
+    padding-top: 40px;
+  
+    color: #fff;
+  
+  }
+  
+  .footer-content {
+  
+    display: flex;
+  
+    align-items: center;
+  
+    justify-content: center;
+  
+    flex-direction: column;
+  
+    text-align: center;
+  
+  }
+  
+  .footer-content h3 {
+  
+    font-size: 1.8rem;
+  
+    text-transform: capitalize;
+  
+    line-height: 3rem;
+  
+  }
+  
+  .footer-content p {
+  
+    max-width: 500px;
+  
+    margin: 10px auto;
+  
+    line-height: 28px;
+  
+    font-size: 14px;
+  
+  }
+  
+  .socials {
+  
+    list-style: none;
+  
+    display: flex;
+  
+    align-items: center;
+  
+    justify-content: center;
+  
+    margin: 1rem 0 3rem 0;
+  
+  }
+  
+  .socials li {
+  
+    margin: 0 10px;
+  
+  }
+  
+  .socials a {
+  
+    text-decoration: none;
+  
+    color: #fff;
+  
+  }
+  
+  .socials a i {
+  
+    font-size: 1.1rem;
+  
+    transition: color 0.4s ease;
+  
+  }
+  
+  .socials a:hover i {
+  
+    color: aqua;
+  
+  }
+  
+  .footer-bottom {
+  
+    width: 100vw;
+  
+    padding: 20px 0;
+  
+    text-align: center;
+  
+  }
+  
+  .footer-bottom p {
+  
+    font-size: 14px;
+  
+    word-spacing: 2px;
+  
+  }
+  
+  .footer-bottom span {
+  
+    opacity: 0.4;
+  
+    font-weight: 200;
+  
+  }

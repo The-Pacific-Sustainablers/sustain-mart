@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="styles1.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+  <title>Contact Us!</title>
+
+</head>
+
+<body onload="myFunction()">
+
+  <header>
+
+    <a href="#" class="logo">THE
+      PACIFIC
+      SUSTAINABLERS</a>
+
+    <ul>
+
+      <li>
+
+        <a href="index.html">Home</a>
+
+      </li>
+
+      <li>
+
+        <a href="index.html#about"">About</a>
+
+    </li>
+
+    <li>
+
+      <a href=" shop.html">Shop</a>
+      </li>
+
+      <li>
+
+        <a href="impact.html">Impact</a>
+
+      </li>
+
+      <li>
+
+        <a href="contact.html">Contact</a>
+
+      </li>
+
+      <li>
+
+        <a href="donate.html">Donate Now</a>
+
+      </li>
+      <li>
+
+        <a href="upcoming.html">Upcoming Projects</a>
+
+      </li>
+      <div class="nav-icons">
+        <i class="fa fa-user" onclick="toggleAccountMenu()"></i>
+        <div id="account-menu" class="account-menu">
+          <a href="login.html">Login</a>
+          <a href="My Account.html">My Account</a>
+        </div>
+      </div>
+      <script>
+
+        function toggleAccountMenu() {
+          const accountMenu = document.getElementById('account-menu');
+          if (accountMenu.style.display === 'block') {
+            accountMenu.style.display = 'none';
+          } else {
+            accountMenu.style.display = 'block';
+          }
+        }
+
+        document.addEventListener('click', function (event) {
+          const accountMenu = document.getElementById('account-menu');
+          const accountIcon = document.querySelector('.fa-user');
+          if (!accountIcon.contains(event.target) && !accountMenu.contains(event.target)) {
+            accountMenu.style.display = 'none';
+          }
+        });
+
+      </script>
+
+      <div class="cart-icon" onclick="toggleCartMenu()">
+        <i class="fa fa-shopping-cart"></i>
+      </div>
+
+      <div id="cart-menu" class="cart-menu">
+        <a href="cart.html">View Cart</a>
+
+      </div>
+      </div>
+      <script>
+
+        function toggleCartMenu() {
+          const cartMenu = document.getElementById('cart-menu');
+          cartMenu.style.display = cartMenu.style.display === 'block' ? 'none' : 'block';
+        }
+
+      </script>
+
+
+
+      <script type="text/javascript">
+
+        window.addEventListener("scroll", function () {
+
+          var header = document.querySelector("header");
+
+          header.classList.toggle("sticky", window.scrollY > 0);
+
+        });
+
+      </script>
+
+      <button class="hamburger">
+
+        <div class="bar"></div>
+
+      </button>
+
+  </header>
+
+  <nav class="mobile-nav">
+
+    <a href="index.html">Home</a>
+
+    <a href="index.html#about">About</a>
+
+    <a href="shop.html">Shop</a>
+
+    <a href="impact.html">Impact</a>
+
+    <a href="contact.html">Contact</a>
+
+    <a href="donate.html">Donate Now</a>
+
+    <a href="upcoming.html">Upcoming Projects</a>
+
+    <a href="account.html">My Account</a>
+  </nav>
+
+  <section>
+
+    <h1 class="contact-h1">You can contact us by filling this form!</h1>
+
+    <div class="contact-container">
+
+      <div class="contact-box">
+
+        <div class="left"></div>
+
+        <div class="right">
+
+          <h2>Contact Us</h2>
+
+          <form action="https://formsubmit.co/contact.developeryajur@gmail.com" method="POST">
+
+            <div class="row">
+
+              <div class="col-75">
+
+                <input type="text" class="field" placeholder="Name" name="name" required style="width: 250px" />
+
+              </div>
+
+            </div>
+
+            <div class="row">
+
+              <div class="col-75">
+
+                <input type="email" class="field" placeholder="Email" name="email" required style="width: 250px" />
+
+              </div>
+
+            </div>
+
+            <div class="row">
+
+              <div class="col-75">
+
+                <textarea class="field area" placeholder="Message" name="message" required
+                  style="width: 250px"></textarea>
+
+              </div>
+
+            </div>
+
+            <div class="row">
+
+              <button class="btn" type="submit">Send</button>
+
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer>
+
+    <div class="footer-content">
+
+      <h3>Find Us on Social Media</h3>
+
+      <p>
+
+        So, let us guess? You wanted to explore our projects, dive into our initiatives, read our latest posts, or just
+        say hi. Don’t worry, we’ve got you covered! Below are our social handles where you can do all this and more.
+
+        Feel free to connect, follow, or drop us a message. Let’s make some great conversations happen and work together
+        towards a sustainable future!
+
+
+
+      </p>
+
+      <ul class="socials">
+
+        <li>
+
+          <a href="https://www.youtube.com/channel/UCE4ZXNvvX1RSWcP-1Wz3Uyg"><i class="fa fa-youtube"></i></a>
+
+        </li>
+
+        <li>
+
+          <a href="https://www.instagram.com/the.pacific.sustainablers/"><i class="fa fa-instagram"></i></a>
+
+        </li>
+
+        <li>
+
+          <a href="https://www.linkedin.com/company/thepacificsustainablers/posts/"><i class="fa fa-linkedin"></i></a>
+
+        </li>
+
+
+
+      </ul>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      <p>
+
+        Copyright &copy; 2024 THE PACIFIC SUSTAINABLERES.
+
+        <span>THE PACIFIC SUSTAINABLERS</span>
+
+      </p>
+
+    </div>
+
+  </footer>
+
+  <script>
+
+    var loader = document.getElementById("preloader");
+
+
+
+    function myFunction() {
+
+      loader.style.display = "none";
+
+    }
+
+  </script>
+
+
+
+  <script>
+
+    jQuery(document).ready(function () {
+
+      $(window).load(function () {
+
+        setTimeout(function () {
+
+          $("#preloader").fadeOut("slow", function () { });
+
+        }, 10000);
+
+      });
+
+    });
+
+  </script>
+
+  <script>
+
+    jQuery(document).ready(function () {
+
+      $(window).load(function () {
+
+        setTimeout(function () {
+
+          $("#preloader").fadeOut("slow", function () { });
+
+        }, 10000);
+
+      });
+
+    });
+
+  </script>
+
+  <script>
+
+    const menu_btn = document.querySelector(".hamburger");
+
+    const mobile_menu = document.querySelector(".mobile-nav");
+
+
+
+    menu_btn.addEventListener("click", function () {
+
+      menu_btn.classList.toggle("is-active");
+
+      mobile_menu.classList.toggle("is-active");
+
+    });
+
+  </script>
+
+</body>
+
+</html>
